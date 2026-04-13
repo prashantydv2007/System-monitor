@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>System Monitor Dashboard</title>
+    <!-- Google Fonts: Inter -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <div class="dashboard-container">
+
+        <header class="header">
+            <div class="header-content">
+                <h1>System Monitor</h1>
+                <p>Real-time resource analytics</p>
+            </div>
+            <div class="status-indicator">
+                <span id="global-status-dot" class="status-dot"></span>
+                <span id="global-status-text">Online</span>
+            </div>
+        </header>
+
+        <section class="insights-panel" id="insights-panel">
+            <div class="insight-icon">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                    stroke-linecap="round" stroke-linejoin="round">
+                    <circle cx="12" cy="12" r="10"></circle>
+                    <line x1="12" y1="16" x2="12" y2="12"></line>
+                    <line x1="12" y1="8" x2="12.01" y2="8"></line>
+                </svg>
+            </div>
+            <div class="insight-content">
+                <h3>Intelligent Insight</h3>
+                <p id="insight-text">System is running efficiently. Resources are within normal parameters.</p>
+            </div>
+        </section>
+
+        <div class="metrics-grid">
+
+            <!-- CPU Card -->
+            <div class="metric-card" id="cpu-card">
+                <div class="card-header">
+                    <h2>CPU Usage</h2>
+                    <span class="value" id="cpu-value">0%</span>
+                </div>
+                <div class="progress-container">
+                    <div class="progress-bar" id="cpu-bar"></div>
+                </div>
+                <div class="card-footer">
+                    <span>Base Frequency: 3.6 GHz</span>
+                </div>
+            </div>
+
+            <!-- RAM Card -->
+            <div class="metric-card" id="ram-card">
+                <div class="card-header">
+                    <h2>RAM Usage</h2>
+                    <span class="value" id="ram-value">0%</span>
+                </div>
+                <div class="progress-container">
+                    <div class="progress-bar" id="ram-bar"></div>
+                </div>
+                <div class="card-footer">
+                    <span id="ram-details">0 GB / 16 GB</span>
+                </div>
+            </div>
+
+            <!-- Storage Card -->
+            <div class="metric-card" id="storage-card">
+                <div class="card-header">
+                    <h2>Storage</h2>
+                    <span class="value" id="storage-value">0%</span>
+                </div>
+                <div class="progress-container">
+                    <div class="progress-bar" id="storage-bar"></div>
+                </div>
+                <div class="card-footer">
+                    <span id="storage-details">0 GB / 512 GB</span>
+                </div>
+            </div>
+
+        </div>
+
+    </div>
+
+    <!-- Alert Container for Dynamic Alerts -->
+    <div id="alert-container" class="alert-container"></div>
+
+    <script src="script.js"></script>
+</body>
+
+</html>
